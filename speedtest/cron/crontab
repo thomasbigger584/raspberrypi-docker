@@ -1,1 +1,1 @@
-* * * * * python3 /speedtest.py >> /var/log/speedtest.log 2>&1
+* * * * * python3 /app/speedtest.py >> /var/log/speedtest.log 2>&1
