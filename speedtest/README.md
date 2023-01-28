@@ -8,3 +8,7 @@ docker-compose build && docker-compose up
 ```shell
 docker exec -it speedtest-speedtest-1  bash -c "tail /var/log/speedtest.log -f"
 ```
+
+## Links
+https://pimylifeup.com/raspberry-pi-internet-speed-monitor/
+https://github.com/bcremer/docker-telegraf-influx-grafana-stack
