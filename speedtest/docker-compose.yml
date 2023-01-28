@@ -1,0 +1,8 @@
+version: '3.0'
+
+services:
+  speedtest:
+    container_name: speedtest
+    build:
+      dockerfile: Dockerfile
+    restart: unless-stopped

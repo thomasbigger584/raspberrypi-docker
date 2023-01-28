@@ -1,0 +1,1 @@
+* * * * * bash /date-script.sh >> /var/log/myjob.log 2>&1
