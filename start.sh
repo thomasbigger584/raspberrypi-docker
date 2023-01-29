@@ -69,6 +69,18 @@ start_speedtest() {
   fi
 }
 
+start_webmin() {
+  cd "$SCRIPT_DIR/webmin" || exit 1
+  if [ $WEBMIN == $SELECTION_ON ]; then
+    echo "__________ Starting WEBMIN __________"
+    docker compose up -d --remove-orphans --force-recreate
+    wait_for_port 8083
+  else
+    echo "__________ Stopping WEBMIN __________"
+    docker compose down --remove-orphans
+  fi
+}
+
 start_nginx() {
   cd "$SCRIPT_DIR/nginx" || exit 1
   if [ $NGINX == $SELECTION_ON ]; then
@@ -84,6 +96,7 @@ start_nginx() {
 start_pihole
 start_portainer
 start_speedtest
+start_webmin
 start_nginx
 
 docker system prune -f

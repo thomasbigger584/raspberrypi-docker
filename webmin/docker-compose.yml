@@ -1,0 +1,9 @@
+version: '3.0'
+
+services:
+  webmin:
+    container_name: webmin
+    image: pschatzmann/webmin
+    ports:
+      - "8084:9000"
+    restart: unless-stopped

@@ -24,6 +24,7 @@ services:
     restart: on-failure
 
   influxdb:
+    container_name: influx
     image: influxdb:1.8
     env_file: influx/config.env
 #    ports:
@@ -34,6 +35,7 @@ services:
     restart: on-failure
 
   grafana:
+    container_name: grafana
     image: grafana/grafana:8.0.2
     depends_on:
       - influxdb

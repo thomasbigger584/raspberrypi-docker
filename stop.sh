@@ -37,6 +37,12 @@ stop_speedtest() {
   docker compose down --remove-orphans
 }
 
+stop_webmin() {
+  cd "$SCRIPT_DIR/webmin" || exit 1
+  echo "__________ Stopping WEBMIN __________"
+  docker compose down --remove-orphans
+}
+
 stop_nginx() {
   cd "$SCRIPT_DIR/nginx" || exit 1
   echo "__________ Stopping NGINX __________"
@@ -46,6 +52,7 @@ stop_nginx() {
 stop_pihole
 stop_portainer
 stop_speedtest
+stop_webmin
 stop_nginx
 
 docker system prune -f
