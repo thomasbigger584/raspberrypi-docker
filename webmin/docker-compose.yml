@@ -5,7 +5,7 @@ services:
     container_name: webmin
     image: eafxx/bind #arm64 support image
     ports:
-      - "8084:8084/tcp"
+      - "8084:10000/tcp"
     env_file: config.env
     volumes:
       - ~/volumes/webmin/data:/data
