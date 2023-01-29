@@ -74,7 +74,7 @@ start_webmin() {
   if [ $WEBMIN == $SELECTION_ON ]; then
     echo "__________ Starting WEBMIN __________"
     docker compose up -d --remove-orphans --force-recreate
-    wait_for_port 8083
+    wait_for_port 8084
   else
     echo "__________ Stopping WEBMIN __________"
     docker compose down --remove-orphans
