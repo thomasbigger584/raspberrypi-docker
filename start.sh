@@ -48,7 +48,8 @@ start_portainer() {
   cd "$SCRIPT_DIR/portainer" || exit 1
   if [ $PORTAINER == $SELECTION_ON ]; then
     echo "__________ Starting PORTAINER __________"
-    docker compose up -d --remove-orphans --force-recreate
+    # dont force-recreate as it will reset the password
+    docker compose up -d --remove-orphans
     wait_for_port 8082
   else
     echo "__________ Stopping PORTAINER __________"
