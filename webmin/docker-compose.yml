@@ -7,6 +7,6 @@ services:
     ports:
       - "8084:10000/tcp"
     volumes:
-      - ~/volumes/webmin/data:/data
+#      - ~/volumes/webmin/data:/data
       - ./conf/etc/miniserv.conf:/data/webmin/etc/miniserv.conf
     restart: unless-stopped
