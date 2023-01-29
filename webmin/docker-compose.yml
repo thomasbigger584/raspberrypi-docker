@@ -6,7 +6,7 @@ services:
     image: eafxx/bind #arm64 support image
     ports:
       - "8084:10000/tcp"
+    env_file: config.env
     volumes:
-#      - ~/volumes/webmin/data:/data
-      - ./conf/etc/miniserv.conf:/data/webmin/etc/miniserv.conf
+      - ~/volumes/webmin/data:/data
     restart: unless-stopped
