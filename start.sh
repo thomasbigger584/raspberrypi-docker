@@ -35,7 +35,8 @@ start_pihole() {
   cd "$SCRIPT_DIR/pihole" || exit 1
   if [ $PIHOLE == $SELECTION_ON ]; then
     echo "__________ Starting PIHOLE __________"
-    docker compose up -d --remove-orphans --force-recreate
+    # dont force-recreate as it will reset the password
+    docker compose up -d --remove-orphans
     wait_for_port 8081
   else
     echo "__________ Stopping PIHOLE __________"
