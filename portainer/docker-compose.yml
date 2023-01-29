@@ -3,8 +3,7 @@ services:
   portainer:
     image: portainer/portainer-ce:latest
     ports:
-      - "9443:9443"
-      - "9000:9000"
+      - "8082:9000"
     volumes:
       - ~/volumes/portainer/data:/data
       - /var/run/docker.sock:/var/run/docker.sock

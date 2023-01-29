@@ -1,0 +1,4 @@
+PIHOLE=off
+PORTAINER=on
+SPEEDTEST=on
+NGINX=on

@@ -16,8 +16,8 @@ services:
       - influxdb
     links:
       - influxdb
-    ports:
-      - '8125:8125/udp'
+#    ports:
+#      - '8125:8125/udp'
     volumes:
       - ./telegraf/etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     restart: on-failure
@@ -25,8 +25,8 @@ services:
   influxdb:
     image: influxdb:1.8
     env_file: influx/config.env
-    ports:
-      - '8086:8086'
+#    ports:
+#      - '8086:8086'
     volumes:
       - ./influx/imports:/imports
       - ~/volumes/speedtest/influx/data:/var/lib/influxdb
@@ -40,7 +40,7 @@ services:
     links:
       - influxdb
     ports:
-      - '3000:3000'
+      - '8083:3000'
     volumes:
       - ~/volumes/speedtest/grafana/data:/var/lib/grafana
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini:ro
